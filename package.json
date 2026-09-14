@@ -1,0 +1,30 @@
+{
+  "name": "parking-bay-klb-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Monorepo for Parking Bay KLB Operational PWA (Tol Krian-Legundi-Bunder-Manyar)",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=apps/web",
+    "build": "npm run build --workspace=packages/shared && npm run build --workspace=apps/web && npm run build --workspace=apps/api",
+    "dev:api": "npm run dev --workspace=apps/api",
+    "start:api": "npm run start --workspace=apps/api",
+    "db:generate": "npm run db:generate --workspace=apps/api",
+    "db:push": "npm run db:push --workspace=apps/api",
+    "preview": "npm run preview --workspace=apps/web",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "parking-bay",
+    "klb",
+    "pwa",
+    "react",
+    "vite",
+    "monorepo"
+  ],
+  "author": "Hendra Bhakti",
+  "license": "MIT"
+}
